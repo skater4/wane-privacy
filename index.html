@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wane — Privacy Policy / Политика конфиденциальности</title>
+<style>
+  :root {
+    --bg: #100D0B;
+    --surface: #1A1613;
+    --hairline: #2E251F;
+    --text: #F4EFE9;
+    --muted: #A2968A;
+    --faint: #6F655B;
+    --accent: #F0A63C;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 22px 90px; }
+
+  header { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; }
+  .mark { width: 22px; height: 22px; flex-shrink: 0; }
+  .brand { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+  nav { display: flex; gap: 8px; margin-bottom: 40px; }
+  nav button {
+    font: inherit;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  nav button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: #2A1F12;
+    color: var(--accent);
+  }
+
+  h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.2px; }
+  .updated { color: var(--faint); font-size: 14px; margin: 0 0 36px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; letter-spacing: -0.1px; }
+  p { margin: 0 0 16px; color: var(--text); }
+  .lead {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin: 0 0 12px;
+  }
+  .lead strong { color: var(--accent); font-weight: 600; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em;
+    color: var(--muted);
+    background: var(--surface);
+    padding: 1px 6px;
+    border-radius: 5px;
+  }
+  a { color: var(--accent); }
+  a:hover { color: #C98A2E; }
+  .term { color: var(--text); font-weight: 600; }
+  footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--hairline);
+    color: var(--faint);
+    font-size: 14px;
+  }
+  section[hidden] { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="#F0A63C" stroke-width="1.7" stroke-linejoin="round"/>
+    </svg>
+    <span class="brand">Wane</span>
+  </header>
+
+  <nav>
+    <button type="button" id="btn-en" aria-pressed="true">English</button>
+    <button type="button" id="btn-ru" aria-pressed="false">Русский</button>
+  </nav>
+
+  <section id="en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 3 September 2026</p>
+
+    <p>Wane is a sleep timer for Android. It notices when you stop touching the
+    screen and stops video playback, so your phone does not keep playing all
+    night.</p>
+
+    <div class="lead">
+      <p style="margin:0"><strong>Wane does not collect any personal data. Nothing leaves your device.</strong></p>
+    </div>
+    <p>There is no account, no sign-up, no analytics, no advertising, no
+    tracking, no crash reporting, and no advertising identifier. Wane has no
+    server of its own and sends nothing anywhere.</p>
+
+    <h2>What Wane stores on your device</h2>
+    <p>Wane keeps a record of each night so it can show you a morning report and
+    your night history:</p>
+    <ul>
+      <li>when the timer was started;</li>
+      <li>when the screen was last touched;</li>
+      <li>when playback was stopped;</li>
+      <li>the timer duration you chose;</li>
+      <li>how many times the screen was touched;</li>
+      <li>thirty averaged intervals between touches, used to draw the
+      falling-asleep curve.</li>
+    </ul>
+    <p>Wane keeps at most the last 400 nights. It also stores your chosen timer
+    duration, your chosen interface language, and whether the paid feature has
+    been unlocked.</p>
+    <p>All of this is written to Wane's private storage on your phone. It is not
+    transmitted anywhere, and no other app can read it. Deleting Wane deletes
+    it.</p>
+    <p>If your phone has Android backup enabled, this data may be included in
+    your own Google account backup — that copy is governed by Google's terms,
+    not by Wane.</p>
+
+    <h2>What Wane deliberately does not do</h2>
+    <p>Wane does <span class="term">not</span> know which app you were watching,
+    does not read the contents of your screen, does not record audio or video,
+    does not access your contacts, photos, location or files, and does not
+    change your system volume. It only learns <em>that</em> the screen was
+    touched, never <em>where</em> or <em>what</em> was touched.</p>
+
+    <h2>Permissions and why they are needed</h2>
+    <p><span class="term">Display over other apps</span>
+    (<code>SYSTEM_ALERT_WINDOW</code>). Wane keeps an invisible window one pixel
+    across. Android notifies it whenever you touch the screen anywhere, in any
+    app. This is how Wane can tell you are still awake without knowing anything
+    about what you are doing. It is the only way the app can work; the window
+    shows nothing and cannot be seen.</p>
+
+    <p><span class="term">Device administrator (screen lock only).</span> To stop
+    playback, Wane locks the screen — the same thing the power button does. Wane
+    declares exactly one device administrator policy, <code>force-lock</code>,
+    and can do nothing else with these rights: it cannot wipe your phone, change
+    your password, read anything, or restrict any setting. The rights are
+    optional and can be revoked from within the app at any time.</p>
+
+    <p><span class="term">Foreground service.</span> The countdown must keep
+    running while you watch, so Wane runs a foreground service with a visible
+    notification you can stop at any moment.</p>
+
+    <p><span class="term">Notifications.</span> Used for the running countdown
+    and for one morning message telling you the report is ready.</p>
+
+    <h2>Purchases</h2>
+    <p>Wane offers one optional purchase that unlocks night history beyond the
+    last seven nights, and optional donations. Payment is handled entirely by
+    Google Play. Wane never sees your card details, name or email — it learns
+    only whether a purchase exists. Google's own privacy policy governs the
+    payment itself.</p>
+
+    <h2>Children</h2>
+    <p>Wane is not directed at children and collects no data from anyone,
+    including children.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date at the top changes with it.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy:
+    <a href="mailto:brobrobro67@gmail.com">brobrobro67@gmail.com</a></p>
+  </section>
+
+  <section id="ru" lang="ru" hidden>
+    <h1>Политика конфиденциальности</h1>
+    <p class="updated">Обновлено 3 сентября 2026 года</p>
+
+    <p>Wane — таймер сна для Android. Приложение замечает, что вы перестали
+    касаться экрана, и останавливает воспроизведение, чтобы телефон не играл
+    всю ночь.</p>
+
+    <div class="lead">
+      <p style="margin:0"><strong>Wane не собирает никаких персональных данных. С устройства ничего не уходит.</strong></p>
+    </div>
+    <p>Нет учётной записи, нет регистрации, нет аналитики, нет рекламы, нет
+    трекинга, нет отправки отчётов о сбоях, нет рекламного идентификатора.
+    У Wane нет своего сервера, и приложение никуда ничего не передаёт.</p>
+
+    <h2>Что Wane хранит на вашем устройстве</h2>
+    <p>Чтобы показать утренний отчёт и историю ночей, Wane записывает про каждую
+    ночь:</p>
+    <ul>
+      <li>когда был запущен таймер;</li>
+      <li>когда экрана коснулись в последний раз;</li>
+      <li>когда воспроизведение было остановлено;</li>
+      <li>выбранную длительность таймера;</li>
+      <li>сколько раз коснулись экрана;</li>
+      <li>тридцать усреднённых интервалов между касаниями — по ним рисуется
+      кривая засыпания.</li>
+    </ul>
+    <p>Хранятся не более четырёхсот последних ночей. Кроме них — выбранная
+    длительность таймера, выбранный язык интерфейса и признак того, что платная
+    возможность открыта.</p>
+    <p>Всё это лежит в личном хранилище приложения на вашем телефоне. Никуда не
+    передаётся, другим приложениям недоступно. Удаление Wane удаляет эти
+    данные.</p>
+    <p>Если на телефоне включено резервное копирование Android, эти данные могут
+    попасть в вашу собственную резервную копию Google — та копия подчиняется
+    условиям Google, а не Wane.</p>
+
+    <h2>Чего Wane сознательно не делает</h2>
+    <p>Wane <span class="term">не</span> знает, какое приложение вы смотрели, не
+    читает содержимое экрана, не записывает звук и видео, не обращается
+    к контактам, фотографиям, местоположению и файлам, не меняет системную
+    громкость. Приложение узнаёт только то, <em>что</em> экрана коснулись, но не
+    <em>где</em> и не <em>чего</em> коснулись.</p>
+
+    <h2>Разрешения и зачем они нужны</h2>
+    <p><span class="term">Поверх других приложений</span>
+    (<code>SYSTEM_ALERT_WINDOW</code>). Wane держит невидимое окно размером
+    в один пиксель. Android сообщает ему о каждом касании экрана в любом
+    приложении. Так Wane понимает, что вы ещё не спите, ничего не зная о том,
+    чем вы заняты. Без этого разрешения приложение работать не может; окно
+    ничего не показывает и его не видно.</p>
+
+    <p><span class="term">Администратор устройства (только блокировка
+    экрана).</span> Чтобы остановить воспроизведение, Wane блокирует экран — то
+    же самое делает кнопка питания. Приложение объявляет ровно одну политику
+    администратора, <code>force-lock</code>, и больше этими правами не может
+    ничего: ни стереть телефон, ни сменить пароль, ни что-либо прочитать, ни
+    ограничить настройки. Права необязательны и отзываются прямо в приложении
+    в любой момент.</p>
+
+    <p><span class="term">Служба переднего плана.</span> Отсчёт должен идти, пока
+    вы смотрите, поэтому Wane поднимает службу переднего плана с видимым
+    уведомлением, которое можно остановить в любую секунду.</p>
+
+    <p><span class="term">Уведомления.</span> Нужны для идущего отсчёта и для
+    одного утреннего сообщения о том, что отчёт готов.</p>
+
+    <h2>Покупки</h2>
+    <p>В Wane есть одна необязательная покупка, открывающая историю ночей глубже
+    последних семи, и необязательные донаты. Оплату целиком проводит Google
+    Play. Wane не видит ни данных карты, ни имени, ни адреса почты — только сам
+    факт покупки. Оплата подчиняется политике конфиденциальности Google.</p>
+
+    <h2>Дети</h2>
+    <p>Wane не адресован детям и не собирает данные ни у кого, включая
+    детей.</p>
+
+    <h2>Изменения</h2>
+    <p>Если политика изменится, изменится и дата вверху.</p>
+
+    <h2>Контакт</h2>
+    <p>Вопросы по этой политике:
+    <a href="mailto:brobrobro67@gmail.com">brobrobro67@gmail.com</a></p>
+  </section>
+
+  <footer>Wane · com.wane.sleep</footer>
+
+</div>
+
+<script>
+  // Без JS видны обе версии — страница остаётся читаемой и не зависит от скрипта.
+  (function () {
+    var en = document.getElementById('en');
+    var ru = document.getElementById('ru');
+    var btnEn = document.getElementById('btn-en');
+    var btnRu = document.getElementById('btn-ru');
+
+    function show(lang) {
+      var isRu = lang === 'ru';
+      en.hidden = isRu;
+      ru.hidden = !isRu;
+      btnEn.setAttribute('aria-pressed', String(!isRu));
+      btnRu.setAttribute('aria-pressed', String(isRu));
+      document.documentElement.lang = isRu ? 'ru' : 'en';
+      if (location.hash !== '#' + lang) history.replaceState(null, '', '#' + lang);
+    }
+
+    btnEn.addEventListener('click', function () { show('en'); });
+    btnRu.addEventListener('click', function () { show('ru'); });
+
+    var start = location.hash === '#ru' ? 'ru'
+      : location.hash === '#en' ? 'en'
+      : (navigator.language || '').slice(0, 2) === 'ru' ? 'ru' : 'en';
+    show(start);
+  })();
+</script>
+</body>
+</html>
