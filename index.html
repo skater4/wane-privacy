@@ -51,6 +51,16 @@
   h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.2px; }
   .updated { color: var(--faint); font-size: 14px; margin: 0 0 36px; }
   h2 { font-size: 20px; margin: 40px 0 12px; letter-spacing: -0.1px; }
+  /* Метка платформы, а не подзаголовок: два приложения устроены по-разному,
+     и читателю важно с первого взгляда видеть, про какое из них абзац. */
+  h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 28px 0 10px;
+  }
   p { margin: 0 0 16px; color: var(--text); }
   .lead {
     background: var(--surface);
@@ -100,22 +110,26 @@
 
   <section id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 3 September 2026</p>
+    <p class="updated">Last updated: 4 September 2026</p>
 
-    <p>Wane is a sleep timer for Android. It notices when you stop touching the
-    screen and stops video playback, so your phone does not keep playing all
-    night.</p>
+    <p>Wane is a sleep timer. It notices that you fell asleep and quiets what
+    you fell asleep to, so your phone does not keep playing all night. There
+    are two apps — one for Android, one for iPhone. They are built differently,
+    so wherever it matters this policy says which one it is talking about.</p>
 
     <div class="lead">
       <p style="margin:0"><strong>Wane does not collect any personal data. Nothing leaves your device.</strong></p>
     </div>
     <p>There is no account, no sign-up, no analytics, no advertising, no
     tracking, no crash reporting, and no advertising identifier. Wane has no
-    server of its own and sends nothing anywhere.</p>
+    server of its own and sends nothing anywhere. This is true of both apps.</p>
 
     <h2>What Wane stores on your device</h2>
     <p>Wane keeps a record of each night so it can show you a morning report and
-    your night history:</p>
+    your night history. What it can record depends on what the phone lets it
+    see.</p>
+
+    <h3>Android</h3>
     <ul>
       <li>when the timer was started;</li>
       <li>when the screen was last touched;</li>
@@ -128,21 +142,64 @@
     <p>Wane keeps at most the last 400 nights. It also stores your chosen timer
     duration, your chosen interface language, and whether the paid feature has
     been unlocked.</p>
+
+    <h3>iPhone</h3>
+    <p>The same kind of record, except that the iPhone app watches the movement
+    of the phone rather than your touches — it cannot see your touches at all:</p>
+    <ul>
+      <li>when the timer was started;</li>
+      <li>when the phone last moved;</li>
+      <li>when the sound was quieted;</li>
+      <li>the duration you chose;</li>
+      <li>thirty averaged figures for how much the phone was moving, used to
+      draw the falling-asleep curve.</li>
+    </ul>
+    <p>Again at most the last 400 nights. Alongside them Wane stores the
+    durations you chose, the volume of its background sound, the volume it
+    lowers other audio to, and whether the paid feature has been unlocked. The
+    interface language is not stored by the app at all — on iPhone that is a
+    system setting.</p>
+    <p>The iPhone app also keeps a short technical diary of the night: times of
+    its own events and figures describing how much the phone moved. It is
+    capped at half a megabyte and the oldest part is dropped as it fills. It
+    exists so that a night which behaved oddly can be explained afterwards, it
+    holds nothing personal, and like everything else it never leaves the phone.
+    There is also a calibration mode, off unless you switch it on yourself;
+    while it is on, one night's raw movement figures are written to a file you
+    can open and read.</p>
+
     <p>All of this is written to Wane's private storage on your phone. It is not
     transmitted anywhere, and no other app can read it. Deleting Wane deletes
     it.</p>
-    <p>If your phone has Android backup enabled, this data may be included in
-    your own Google account backup — that copy is governed by Google's terms,
-    not by Wane.</p>
+    <p>If device backup is switched on — Google backup on Android, iCloud or a
+    computer backup on iPhone — this data may be included in your own backup.
+    That copy is governed by Google's or Apple's terms, not by Wane.</p>
 
     <h2>What Wane deliberately does not do</h2>
-    <p>Wane does <span class="term">not</span> know which app you were watching,
-    does not read the contents of your screen, does not record audio or video,
-    does not access your contacts, photos, location or files, and does not
-    change your system volume. It only learns <em>that</em> the screen was
-    touched, never <em>where</em> or <em>what</em> was touched.</p>
+    <p>Neither app knows which app you were watching. Neither reads the contents
+    of your screen, records audio or video, or touches your contacts, photos,
+    location or files.</p>
+
+    <h3>Android</h3>
+    <p>Wane learns only <em>that</em> the screen was touched, never
+    <em>where</em> or <em>what</em> was touched. It does not change your system
+    volume.</p>
+
+    <h3>iPhone</h3>
+    <p>Wane learns only how much the phone is moving — one number, several times
+    a second, from the same sensor that decides when to rotate your screen. It
+    never sees your touches: iOS does not let one app watch another. It does not
+    read your activity history or your step count, and it does not use the
+    microphone or the camera.</p>
+    <p>One thing it <em>does</em> do, and you should know about it: to quiet
+    what you fell asleep to, Wane asks iOS to duck other audio and turns the
+    phone's volume down. It never turns the volume up by itself. It remembers
+    the level it found so it can hand exactly that back — one tap on its
+    notification, and your sound is yours again.</p>
 
     <h2>Permissions and why they are needed</h2>
+
+    <h3>Android</h3>
     <p><span class="term">Display over other apps</span>
     (<code>SYSTEM_ALERT_WINDOW</code>). Wane keeps an invisible window one pixel
     across. Android notifies it whenever you touch the screen anywhere, in any
@@ -164,18 +221,38 @@
     <p><span class="term">Notifications.</span> Used for the running countdown
     and for one morning message telling you the report is ready.</p>
 
+    <h3>iPhone</h3>
+    <p><span class="term">Notifications — the only permission the app asks
+    for.</span> The notification carries the button that gives your volume back,
+    and one morning message telling you the report is ready. Refuse it and Wane
+    still works: the button simply lives inside the app instead.</p>
+
+    <p><span class="term">The sensor needs no permission at all.</span> Wane
+    reads the phone's accelerometer, and iOS does not gate that behind
+    “Motion &amp; Fitness” or anything else. The app does not ask for that
+    access, and it is not in the app at all.</p>
+
+    <p><span class="term">Background sound.</span> Not a permission, but it
+    deserves an explanation, because it is the one thing you will notice. iOS
+    suspends an app that falls silent, and a suspended app cannot notice that
+    you fell asleep. So Wane plays a quiet sound for as long as the timer runs.
+    You set how loud it is, it is meant to sit under whatever you are watching,
+    and it is the only reason the app is allowed to keep working while your
+    screen is off.</p>
+
     <h2>Purchases</h2>
-    <p>Wane offers one optional purchase that unlocks night history beyond the
-    last seven nights, and optional donations. Payment is handled entirely by
-    Google Play. Wane never sees your card details, name or email — it learns
-    only whether a purchase exists. Google's own privacy policy governs the
-    payment itself.</p>
+    <p>Wane offers one optional purchase, which unlocks night history beyond the
+    last seven nights, and optional donations. Wane never sees your card
+    details, your name or your email address — it learns only whether a purchase
+    exists.</p>
+    <p>Payment is handled entirely by the store: Google Play on Android, the App
+    Store on iPhone. Their own privacy policies govern the payment itself.</p>
 
     <h2>Children</h2>
     <p>Wane is meant for a general audience and is not directed at children
-    under 13. It does not take part in Google Play's programme for families.
-    Since the app collects nothing from anyone, it holds no children's data
-    either.</p>
+    under 13. It takes part neither in Google Play's programme for families nor
+    in the App Store's Kids Category. Since the app collects nothing from
+    anyone, it holds no children's data either.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes, the date at the top changes with it.</p>
@@ -187,22 +264,27 @@
 
   <section id="ru" lang="ru" hidden>
     <h1>Политика конфиденциальности</h1>
-    <p class="updated">Обновлено 3 сентября 2026 года</p>
+    <p class="updated">Обновлено 4 сентября 2026 года</p>
 
-    <p>Wane — таймер сна для Android. Приложение замечает, что вы перестали
-    касаться экрана, и останавливает воспроизведение, чтобы телефон не играл
-    всю ночь.</p>
+    <p>Wane — таймер сна. Приложение замечает, что вы уснули, и приглушает то,
+    подо что вы уснули, чтобы телефон не играл всю ночь. Приложений два — для
+    Android и для iPhone. Устроены они по-разному, поэтому там, где это важно,
+    политика говорит, о каком из них идёт речь.</p>
 
     <div class="lead">
       <p style="margin:0"><strong>Wane не собирает никаких персональных данных. С устройства ничего не уходит.</strong></p>
     </div>
     <p>Нет учётной записи, нет регистрации, нет аналитики, нет рекламы, нет
     трекинга, нет отправки отчётов о сбоях, нет рекламного идентификатора.
-    У Wane нет своего сервера, и приложение никуда ничего не передаёт.</p>
+    У Wane нет своего сервера, и приложение никуда ничего не передаёт. Это
+    верно для обоих приложений.</p>
 
     <h2>Что Wane хранит на вашем устройстве</h2>
-    <p>Чтобы показать утренний отчёт и историю ночей, Wane записывает про каждую
-    ночь:</p>
+    <p>Чтобы показать утренний отчёт и историю ночей, Wane записывает каждую
+    ночь. Что именно он может записать, зависит от того, что ему позволяет
+    видеть телефон.</p>
+
+    <h3>Android</h3>
     <ul>
       <li>когда был запущен таймер;</li>
       <li>когда экрана коснулись в последний раз;</li>
@@ -215,21 +297,65 @@
     <p>Хранятся не более четырёхсот последних ночей. Кроме них — выбранная
     длительность таймера, выбранный язык интерфейса и признак того, что платная
     возможность открыта.</p>
+
+    <h3>iPhone</h3>
+    <p>Запись та же по смыслу, только версия для iPhone смотрит на движение
+    телефона, а не на ваши касания — касаний она не видит вовсе:</p>
+    <ul>
+      <li>когда был запущен таймер;</li>
+      <li>когда телефон двигался в последний раз;</li>
+      <li>когда звук был приглушён;</li>
+      <li>выбранную длительность;</li>
+      <li>тридцать усреднённых значений того, насколько телефон двигался, — по
+      ним рисуется кривая засыпания.</li>
+    </ul>
+    <p>Снова не более четырёхсот последних ночей. Рядом с ними — выбранные
+    длительности, громкость собственного фонового звука, громкость, до которой
+    приложение убавляет чужой звук, и признак того, что платная возможность
+    открыта. Язык интерфейса приложение не хранит вовсе: на iPhone это
+    системная настройка.</p>
+    <p>Версия для iPhone ведёт ещё короткий технический дневник ночи: время
+    собственных событий и цифры о том, насколько телефон двигался. Он ограничен
+    половиной мегабайта, и по мере заполнения из него уходит самое старое.
+    Дневник нужен затем, чтобы странно прошедшую ночь можно было потом
+    объяснить; ничего личного в нём нет, и, как и всё остальное, он никуда
+    с телефона не уходит. Есть ещё режим калибровки, выключенный, пока вы сами
+    его не включите; пока он включён, сырые цифры движения за одну ночь
+    пишутся в файл, который вы можете открыть и прочитать.</p>
+
     <p>Всё это лежит в личном хранилище приложения на вашем телефоне. Никуда не
     передаётся, другим приложениям недоступно. Удаление Wane удаляет эти
     данные.</p>
-    <p>Если на телефоне включено резервное копирование Android, эти данные могут
-    попасть в вашу собственную резервную копию Google — та копия подчиняется
-    условиям Google, а не Wane.</p>
+    <p>Если на устройстве включено резервное копирование — Google на Android,
+    iCloud или копия на компьютере на iPhone, — эти данные могут попасть в вашу
+    собственную резервную копию. Та копия подчиняется условиям Google или
+    Apple, а не Wane.</p>
 
     <h2>Чего Wane сознательно не делает</h2>
-    <p>Wane <span class="term">не</span> знает, какое приложение вы смотрели, не
+    <p>Ни то, ни другое приложение не знает, что вы смотрели. Ни одно из них не
     читает содержимое экрана, не записывает звук и видео, не обращается
-    к контактам, фотографиям, местоположению и файлам, не меняет системную
-    громкость. Приложение узнаёт только то, <em>что</em> экрана коснулись, но не
-    <em>где</em> и не <em>чего</em> коснулись.</p>
+    к контактам, фотографиям, местоположению и файлам.</p>
+
+    <h3>Android</h3>
+    <p>Приложение узнаёт только то, <em>что</em> экрана коснулись, но не
+    <em>где</em> и не <em>чего</em> коснулись. Системную громкость оно не
+    меняет.</p>
+
+    <h3>iPhone</h3>
+    <p>Приложение узнаёт только, насколько телефон двигается: одно число
+    несколько раз в секунду, с того же датчика, который решает, поворачивать ли
+    экран. Ваших касаний оно не видит никогда — iOS не даёт одному приложению
+    следить за другим. Историю активности и число шагов оно не читает,
+    микрофоном и камерой не пользуется.</p>
+    <p>Одно приложение всё-таки <em>делает</em>, и об этом стоит знать: чтобы
+    приглушить то, подо что вы уснули, Wane просит iOS приглушить чужой звук и
+    убавляет громкость телефона. Само оно громкость никогда не прибавляет.
+    Уровень, который оно застало, запоминается, чтобы вернуть ровно его, —
+    одно нажатие в уведомлении, и звук снова ваш.</p>
 
     <h2>Разрешения и зачем они нужны</h2>
+
+    <h3>Android</h3>
     <p><span class="term">Поверх других приложений</span>
     (<code>SYSTEM_ALERT_WINDOW</code>). Wane держит невидимое окно размером
     в один пиксель. Android сообщает ему о каждом касании экрана в любом
@@ -252,17 +378,37 @@
     <p><span class="term">Уведомления.</span> Нужны для идущего отсчёта и для
     одного утреннего сообщения о том, что отчёт готов.</p>
 
+    <h3>iPhone</h3>
+    <p><span class="term">Уведомления — единственное разрешение, которое
+    приложение просит.</span> В уведомлении живёт кнопка возврата громкости, и
+    им же приходит утреннее сообщение о готовом отчёте. Откажете — Wane всё
+    равно работает: кнопка просто остаётся внутри приложения.</p>
+
+    <p><span class="term">Датчику разрешение не нужно вовсе.</span> Wane читает
+    акселерометр телефона, и iOS не закрывает его ни «Движением и фитнесом», ни
+    чем-либо ещё. Этого доступа приложение не просит, и в приложении его нет.</p>
+
+    <p><span class="term">Фоновый звук.</span> Это не разрешение, но объяснения
+    заслуживает — именно его вы и заметите. iOS усыпляет приложение, которое
+    замолчало, а спящее приложение не заметит, что вы уснули. Поэтому Wane
+    играет тихий звук, пока идёт отсчёт. Громкость выбираете вы, звук рассчитан
+    на то, чтобы лежать под тем, что вы смотрите, и он же — единственная
+    причина, по которой приложению позволено работать при погашенном
+    экране.</p>
+
     <h2>Покупки</h2>
     <p>В Wane есть одна необязательная покупка, открывающая историю ночей глубже
-    последних семи, и необязательные донаты. Оплату целиком проводит Google
-    Play. Wane не видит ни данных карты, ни имени, ни адреса почты — только сам
-    факт покупки. Оплата подчиняется политике конфиденциальности Google.</p>
+    последних семи, и необязательные донаты. Wane не видит ни данных карты, ни
+    имени, ни адреса почты — только сам факт покупки.</p>
+    <p>Оплату целиком проводит магазин: Google Play на Android, App Store на
+    iPhone. Сама оплата подчиняется их собственным политикам
+    конфиденциальности.</p>
 
     <h2>Дети</h2>
     <p>Wane рассчитан на общую аудиторию и не предназначен для детей младше
-    13 лет. В программе Google Play для семей приложение не участвует. Оно
-    вообще ничего ни о ком не собирает, поэтому и данных о детях у него
-    нет.</p>
+    13 лет. Ни в программе Google Play для семей, ни в детской категории App
+    Store приложение не участвует. Оно вообще ничего ни о ком не собирает,
+    поэтому и данных о детях у него нет.</p>
 
     <h2>Изменения</h2>
     <p>Если политика изменится, изменится и дата вверху.</p>
@@ -272,7 +418,7 @@
     <a href="mailto:brobrobro67@gmail.com">brobrobro67@gmail.com</a></p>
   </section>
 
-  <footer>Wane · com.wane.sleep</footer>
+  <footer>Wane · com.wane.sleep · com.stanmanman.Wane</footer>
 
 </div>
 
